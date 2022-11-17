@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import Api from './Api';
 
 
@@ -17,7 +17,7 @@ export default function SP() {
     setDados("");
   } 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.textoTitulo}>PREVISÃO DO TEMPO SÃO PAULO</Text>
         <View style={styles.imgs}>
@@ -28,7 +28,7 @@ export default function SP() {
       }}
       />
       </View>
-      </View>
+
 
       <View style={styles.blocos}>
         <TouchableOpacity
@@ -64,7 +64,8 @@ export default function SP() {
           }}
         
         />
-      </View>
+              </View>
+      </ScrollView>
     
   );
 }
@@ -72,9 +73,7 @@ export default function SP() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#FFF'
   },
   tempo:{
     marginLeft: '10%',
@@ -86,7 +85,9 @@ const styles = StyleSheet.create({
     color: '#983AE0',
   },
   header: {
-    margin: 50
+    margin: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   imgg:{
     width: 320,

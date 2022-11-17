@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import Api from './Api';
 
 
@@ -17,7 +17,7 @@ export default function Osasco() {
     setDados("");
   } 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.textoTitulo}>PREVISÃO DO TEMPO OSASCO</Text>
         <View style={styles.imgs}>
@@ -28,7 +28,7 @@ export default function Osasco() {
       }}
       />
       </View>
-      </View>
+
 
       <View style={styles.blocos}>
         <TouchableOpacity
@@ -64,7 +64,8 @@ export default function Osasco() {
           }}
         
         />
-      </View>
+              </View>
+      </ScrollView>
     
   );
 }
@@ -72,9 +73,7 @@ export default function Osasco() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#FFF'
   },
   tempo:{
     marginLeft: '10%',
@@ -86,7 +85,9 @@ const styles = StyleSheet.create({
     color: '#FA1613',
   },
   header: {
-    margin: 50
+    margin: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   imgg:{
     width: 320,

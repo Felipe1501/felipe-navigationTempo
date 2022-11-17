@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from "react-native";
 
 export default function Home({navigation}){
     return(
-        <View style={styles.bloco}>
+        <ScrollView  style={styles.bloco}>
             <Text style={styles.texto}>PREVISÃO DO TEMPO BONNER </Text>
             <Text style={styles.texto}>Felipe Barbosa dos Santos </Text>
             <Image
@@ -13,7 +13,7 @@ export default function Home({navigation}){
             }}
             />
             <Text style={styles.texto}>Escolha a cidade que deseja ver a previsão do tempo</Text>
-
+            
             <View>
                 <TouchableOpacity 
                 style={styles.btn}
@@ -44,9 +44,10 @@ export default function Home({navigation}){
                 onPress={() => navigation.navigate("Itanhaem")}>
                     <Text style={styles.textBtn}>ITANHAÉM</Text>
                 </TouchableOpacity>
+                <Text style={styles.textoEnd}>PROGRAMAÇÃO MOBILE, 2022 </Text>
             </View>
            
-        </View>
+        </ScrollView>
     );
 }
 
@@ -57,6 +58,12 @@ const styles = StyleSheet.create({
     },
     texto:{
         fontSize: 30,
+        textAlign: 'center',
+        color: '#546EF0'
+    },
+    textoEnd:{
+        fontSize: 20,
+        margin: 30,
         textAlign: 'center',
         color: '#546EF0'
     },
